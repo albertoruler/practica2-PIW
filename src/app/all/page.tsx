@@ -19,17 +19,17 @@ export default async function AllPage() {
   const countries = await getCountries();
 
   return (
-    <main className="p-4">
-      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <h1 className="text-3xl font-semibold text-slate-900 dark:text-slate-100">All countries</h1>
-          <p className="text-slate-700 dark:text-slate-200">
-            Listado completo de países.
-          </p>
+    <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mb-10 rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/30 backdrop-blur-xl">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h1 className="text-4xl font-semibold tracking-tight text-white">All countries</h1>
+            <p className="mt-3 max-w-2xl text-slate-300">Listado completo de países.</p>
+          </div>
+          <a href="/" className="rounded-full bg-slate-100 px-4 py-2 font-medium text-slate-950 transition hover:bg-white">
+            Inicio
+          </a>
         </div>
-        <a href="/" className="rounded bg-slate-100 px-3 py-2 text-sm text-slate-900 hover:bg-slate-200">
-          Inicio
-        </a>
       </div>
       <CountriesGrid countries={countries} />
     </main>

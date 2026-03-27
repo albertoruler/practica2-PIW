@@ -39,43 +39,42 @@ export default async function CountryPage({
     : "N/A";
 
   return (
-    <main className="p-4">
-      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h1 className="text-3xl font-semibold">{country.name.official}</h1>
-          <p className="text-slate-600">{country.name.common}</p>
+    <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mb-10 rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/30 backdrop-blur-xl">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h1 className="text-4xl font-semibold tracking-tight text-white">{country.name.official}</h1>
+            <p className="mt-2 text-slate-400">{country.name.common}</p>
+          </div>
+          <Link href="/" className="rounded-full bg-slate-100 px-4 py-2 font-medium text-slate-950 transition hover:bg-white">
+            Volver
+          </Link>
         </div>
-        <Link href="/" className="rounded bg-slate-100 px-3 py-2 text-sm">
-          Volver
-        </Link>
       </div>
-      <div className="grid gap-6 lg:grid-cols-[350px_1fr]">
-        <img
-          src={country.flags.svg || country.flags.png}
-          alt={country.name.common}
-          className="h-72 w-full rounded-xl object-cover"
-        />
-        <div className="rounded-xl border bg-white p-6 shadow-sm">
-          <div className="space-y-3">
+      <div className="grid gap-6 lg:grid-cols-[360px_1fr]">
+        <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-900/80 shadow-2xl shadow-slate-950/20">
+          <img
+            src={country.flags.svg || country.flags.png}
+            alt={country.name.common}
+            className="h-72 w-full object-cover"
+          />
+        </div>
+        <div className="rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/20">
+          <div className="space-y-4 text-slate-300">
             <p>
-              <span className="font-semibold">Capital:</span>{" "}
-              {country.capital?.[0] || "N/A"}
+              <span className="font-semibold text-white">Capital:</span> {country.capital?.[0] || "N/A"}
             </p>
             <p>
-              <span className="font-semibold">Subregion:</span>{" "}
-              {country.subregion || "N/A"}
+              <span className="font-semibold text-white">Subregion:</span> {country.subregion || "N/A"}
             </p>
             <p>
-              <span className="font-semibold">Population:</span>{" "}
-              {country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+              <span className="font-semibold text-white">Population:</span> {country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
             </p>
             <p>
-              <span className="font-semibold">Languages:</span>{" "}
-              {languages}
+              <span className="font-semibold text-white">Languages:</span> {languages}
             </p>
             <p>
-              <span className="font-semibold">Currencies:</span>{" "}
-              {currencies}
+              <span className="font-semibold text-white">Currencies:</span> {currencies}
             </p>
           </div>
         </div>
